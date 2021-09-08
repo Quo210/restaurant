@@ -1,1 +1,1 @@
-console.log("Hello");
+(()=>{"use strict";const n=o,o={mkEle:function(n){return document.createElement(`${n}`)},joinChild:function(n,o){n.appendChild(o)},say:function(n){console.log(n)}};(function(){let n=trial;console.log(n)})(),n.say("Hello")})();
