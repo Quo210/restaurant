@@ -3,6 +3,7 @@ import { navbar } from "./navbar";
 import '../styles/style.css';
 import { parts } from "./parts";
 import { menuModule } from "./menu";
+import { contactModule } from "./contact";
 
 //homeModule.make();
 
@@ -31,7 +32,14 @@ const tabHandler = (() => {
             changeTab()
             homeModule.make()
         }
-        BTN2.onclick;
+        BTN2.onclick = () => {
+            changeTab();
+            menuModule.make();
+        };
+        BTN3.onclick = () => {
+            changeTab();
+            contactModule.make();
+        }
     }
     
     function changeTab() {

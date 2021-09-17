@@ -10,7 +10,7 @@ export const parts = (() => {
         }
     }
 
-    function generateTemplate() {
+    function generateTemplate(cssClass) {
         const mainDiv = document.createElement('div');
         const h1 = document.createElement('h1');
         const h2 = document.createElement('h2');
@@ -19,11 +19,12 @@ export const parts = (() => {
         const imgDiv = document.createElement('div');
 
         appendFromArray([img],imgDiv);
-        appendFromArray([h1,h2,description,imgDiv],mainDiv);
-        mainDiv.classList.add('main');
+        mainDiv.classList.add(`${cssClass}`);
 
         return [h1,h2,description,img,imgDiv,mainDiv];
     }
+
+    
 
     return {
         get: getWorkingDiv,

@@ -100,6 +100,16 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, style) {\
 
 /***/ }),
 
+/***/ "./src/contact.js":
+/*!************************!*\
+  !*** ./src/contact.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"contactModule\": () => (/* binding */ contactModule)\n/* harmony export */ });\n/* harmony import */ var _parts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts */ \"./src/parts.js\");\n/* harmony import */ var _images_cook_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/cook.jpg */ \"./images/cook.jpg\");\n\n\n\nconst contactModule = (() => {\n\n    function makeContactPage() {\n        const a = _parts__WEBPACK_IMPORTED_MODULE_0__.parts.template('main'); \n        //h1,h2,description,img,imgDiv,mainDiv]\n        const h1 = a[0];\n        const h2 = a[1];\n        const desc = a[2]\n        const img = a[3];\n        const imgDiv = a[4];\n        const mainDiv = a[5];\n\n        h1.textContent = 'Contact us!';\n        h2.textContent = 'This is Sussie';\n        desc.textContent = 'She\\'s an authentic italian born mamushka capable of crafting purrfect masterpieces with the flick of a claw. Hail her majesty.'\n        img.setAttribute('src',`${_images_cook_jpg__WEBPACK_IMPORTED_MODULE_1__}`);\n\n        _parts__WEBPACK_IMPORTED_MODULE_0__.parts.addArr([h1,h2,desc,imgDiv],mainDiv);\n\n        const header = document.querySelector('div#header');\n        header.insertAdjacentElement('afterend',mainDiv);  \n\n    }\n\n    return {\n        make: makeContactPage,\n    }\n    \n})();\n\n//# sourceURL=webpack://restaurant/./src/contact.js?");
+
+/***/ }),
+
 /***/ "./src/homepage.js":
 /*!*************************!*\
   !*** ./src/homepage.js ***!
@@ -116,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _homepage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./homepage */ \"./src/homepage.js\");\n/* harmony import */ var _navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navbar */ \"./src/navbar.js\");\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/style.css */ \"./styles/style.css\");\n/* harmony import */ var _parts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./parts */ \"./src/parts.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n\n\n\n\n\n\n//homeModule.make();\n\nconst header = document.querySelector('div#header');\nconst tabsArray = ['Home','Menu','Contact'];\n\n_navbar__WEBPACK_IMPORTED_MODULE_1__.navbar.make(header,tabsArray,'navb')\n\nconst footer = document.querySelector('div#footer');\nconst footArray = ['Thanks to','And','By-Quo210'];\n\n_navbar__WEBPACK_IMPORTED_MODULE_1__.navbar.make(footer,footArray,'navb');\n\nconst tabHandler = (() => {\n    const headerBtns = Array.from( document.querySelectorAll('div#header > div.navb') )\n\n    const BTN1 = headerBtns[0];\n    const BTN2 = headerBtns[1];\n    const BTN3 = headerBtns[2];\n\n    const test = () => { \n        }\n\n    function addListeners() {\n        BTN1.onclick = () => {\n            changeTab()\n            _homepage__WEBPACK_IMPORTED_MODULE_0__.homeModule.make()\n        }\n        BTN2.onclick;\n    }\n    \n    function changeTab() {\n        let myDiv = _parts__WEBPACK_IMPORTED_MODULE_3__.parts.get();\n        if (myDiv == null) {\n            return\n        } else {\n            myDiv.remove()\n        }\n    }\n\n    return {\n        test: test,\n        handle: addListeners,\n    }\n})();\n\ntabHandler.handle();\n\n//# sourceURL=webpack://restaurant/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _homepage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./homepage */ \"./src/homepage.js\");\n/* harmony import */ var _navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navbar */ \"./src/navbar.js\");\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/style.css */ \"./styles/style.css\");\n/* harmony import */ var _parts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./parts */ \"./src/parts.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./contact */ \"./src/contact.js\");\n\n\n\n\n\n\n\n//homeModule.make();\n\nconst header = document.querySelector('div#header');\nconst tabsArray = ['Home','Menu','Contact'];\n\n_navbar__WEBPACK_IMPORTED_MODULE_1__.navbar.make(header,tabsArray,'navb')\n\nconst footer = document.querySelector('div#footer');\nconst footArray = ['Thanks to','And','By-Quo210'];\n\n_navbar__WEBPACK_IMPORTED_MODULE_1__.navbar.make(footer,footArray,'navb');\n\nconst tabHandler = (() => {\n    const headerBtns = Array.from( document.querySelectorAll('div#header > div.navb') )\n\n    const BTN1 = headerBtns[0];\n    const BTN2 = headerBtns[1];\n    const BTN3 = headerBtns[2];\n\n    const test = () => { \n        }\n\n    function addListeners() {\n        BTN1.onclick = () => {\n            changeTab()\n            _homepage__WEBPACK_IMPORTED_MODULE_0__.homeModule.make()\n        }\n        BTN2.onclick = () => {\n            changeTab();\n            _menu__WEBPACK_IMPORTED_MODULE_4__.menuModule.make();\n        };\n        BTN3.onclick = () => {\n            changeTab();\n            _contact__WEBPACK_IMPORTED_MODULE_5__.contactModule.make();\n        }\n    }\n    \n    function changeTab() {\n        let myDiv = _parts__WEBPACK_IMPORTED_MODULE_3__.parts.get();\n        if (myDiv == null) {\n            return\n        } else {\n            myDiv.remove()\n        }\n    }\n\n    return {\n        test: test,\n        handle: addListeners,\n    }\n})();\n\ntabHandler.handle();\n\n//# sourceURL=webpack://restaurant/./src/index.js?");
 
 /***/ }),
 
@@ -126,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hom
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"menuModule\": () => (/* binding */ menuModule)\n/* harmony export */ });\n/* harmony import */ var _parts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts */ \"./src/parts.js\");\n\n\nconst menuModule = (()=>{\n    class Food {\n        constructor(name,price,description,imgdir) {\n            name: name;\n            price: price;\n            tag: description;\n            image: imgdir;\n        }\n    }\n\n    function newFood(food) {\n        //Create the DOM Elements\n        const a = _parts__WEBPACK_IMPORTED_MODULE_0__.parts.template(); // [h1,h2,description,img,imgDiv,mainDiv];\n\n        const div = a[5];\n        const h1 = a[0];\n        const h2 = a[1];\n        const imgDiv = a[4]\n        const img = a[3];\n        const description = a[2];\n\n        //Add Content\n        h1.textContent = food.name;\n        h2.textContent = food.price;\n        description.textContent = food.tag;\n        img.setAttribute('src',`${food.image}`);\n        \n\n        // //Append them together\n        imgDiv.appendChild(img);\n        const eleArr = [h1,h2,description,imgDiv];\n        \n    }\n\n    return {\n        test: newFood,\n    }\n\n\n})();\n\n//# sourceURL=webpack://restaurant/./src/menu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"menuModule\": () => (/* binding */ menuModule)\n/* harmony export */ });\n/* harmony import */ var _parts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts */ \"./src/parts.js\");\n/* harmony import */ var _images_pizza_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/pizza.jpg */ \"./images/pizza.jpg\");\n/* harmony import */ var _images_corn_pizza_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/corn-pizza.jpg */ \"./images/corn-pizza.jpg\");\n/* harmony import */ var _images_shrimp_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../images/shrimp.jpg */ \"./images/shrimp.jpg\");\n\n\n\n\n\nconst menuModule = (()=>{\n    class Food {\n        constructor(name,price,description,imgdir) {\n            this.name = name;\n            this.price = price;\n            this.tag = description;\n            this.image = imgdir;\n        }\n    }\n\n    function newFood(food) {\n        //Create the DOM Elements\n        const a = _parts__WEBPACK_IMPORTED_MODULE_0__.parts.template('menuDiv'); // [h1,h2,description,img,imgDiv,mainDiv];\n\n        const div = a[5];\n        const h1 = a[0];\n        const h2 = a[1];\n        const imgDiv = a[4]\n        const img = a[3];\n        const description = a[2];\n\n        //Add Content\n        h1.textContent = food.name;\n        h2.textContent = 'Price: ' + food.price;\n        description.innerHTML = '<span class=\"desc\">Description: </span>'+ food.tag;\n        img.setAttribute('src',`${food.image}`);\n        \n\n        // //Append them together\n        imgDiv.appendChild(img);\n        const eleArr = [h1,h2,description,imgDiv];\n        _parts__WEBPACK_IMPORTED_MODULE_0__.parts.addArr(eleArr,div);\n\n        return div;\n        \n    }\n\n    const food1 = new Food('Vegan Double Cheese', '5$','Cheddar and parmesan cheese melted on top of up to 4 vegetable or mushroom toppings.',`${_images_pizza_jpg__WEBPACK_IMPORTED_MODULE_1__}`);\n\n    const food2 = new Food('Tropical \"Margarita\"','6$','Cheese, bacon strips, perejil and corn.',`${_images_corn_pizza_jpg__WEBPACK_IMPORTED_MODULE_2__}`);\n\n    const food3 = new Food('Seaworld Pizza','8$','anchovies, tuna and shrimp with seasoning of your choice',`${_images_shrimp_jpg__WEBPACK_IMPORTED_MODULE_3__}`);\n\n    const veganPizza = newFood(food1);\n    const margarita = newFood(food2);\n    const seaworld = newFood(food3);\n\n    \n\n    function makeMenuPage() {\n        const mainDiv = document.createElement('div');\n        mainDiv.classList.add('main');\n\n        _parts__WEBPACK_IMPORTED_MODULE_0__.parts.addArr([veganPizza,margarita,seaworld],mainDiv);\n\n\n        const header = document.querySelector('div#header');\n        header.insertAdjacentElement('afterend',mainDiv);\n    }\n\n    return {\n        newFood: newFood,\n        Food: Food,\n        make: makeMenuPage,\n    }\n\n\n})();\n\n//# sourceURL=webpack://restaurant/./src/menu.js?");
 
 /***/ }),
 
@@ -146,7 +156,47 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"parts\": () => (/* binding */ parts)\n/* harmony export */ });\nconst parts = (() => {\n\n    function getWorkingDiv() {\n        return document.querySelector('div.main');\n    }\n\n    function appendFromArray(arr,target) {\n        for (let i = 0; i < arr.length; i++) {\n            target.appendChild(arr[i]);\n        }\n    }\n\n    function generateTemplate() {\n        const mainDiv = document.createElement('div');\n        const h1 = document.createElement('h1');\n        const h2 = document.createElement('h2');\n        const description = document.createElement('p');\n        const img = document.createElement('img');\n        const imgDiv = document.createElement('div');\n\n        appendFromArray([img],imgDiv);\n        appendFromArray([h1,h2,description,imgDiv],mainDiv);\n        mainDiv.classList.add('main');\n\n        return [h1,h2,description,img,imgDiv,mainDiv];\n    }\n\n    return {\n        get: getWorkingDiv,\n        addArr: appendFromArray,\n        template: generateTemplate,\n    }\n\n})();\n\n//# sourceURL=webpack://restaurant/./src/parts.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"parts\": () => (/* binding */ parts)\n/* harmony export */ });\nconst parts = (() => {\n\n    function getWorkingDiv() {\n        return document.querySelector('div.main');\n    }\n\n    function appendFromArray(arr,target) {\n        for (let i = 0; i < arr.length; i++) {\n            target.appendChild(arr[i]);\n        }\n    }\n\n    function generateTemplate(cssClass) {\n        const mainDiv = document.createElement('div');\n        const h1 = document.createElement('h1');\n        const h2 = document.createElement('h2');\n        const description = document.createElement('p');\n        const img = document.createElement('img');\n        const imgDiv = document.createElement('div');\n\n        appendFromArray([img],imgDiv);\n        mainDiv.classList.add(`${cssClass}`);\n\n        return [h1,h2,description,img,imgDiv,mainDiv];\n    }\n\n    \n\n    return {\n        get: getWorkingDiv,\n        addArr: appendFromArray,\n        template: generateTemplate,\n    }\n\n})();\n\n//# sourceURL=webpack://restaurant/./src/parts.js?");
+
+/***/ }),
+
+/***/ "./images/cook.jpg":
+/*!*************************!*\
+  !*** ./images/cook.jpg ***!
+  \*************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"0e7d6d2f6e82b7c1336c.jpg\";\n\n//# sourceURL=webpack://restaurant/./images/cook.jpg?");
+
+/***/ }),
+
+/***/ "./images/corn-pizza.jpg":
+/*!*******************************!*\
+  !*** ./images/corn-pizza.jpg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"1cd2d2b1e4de1e7336f9.jpg\";\n\n//# sourceURL=webpack://restaurant/./images/corn-pizza.jpg?");
+
+/***/ }),
+
+/***/ "./images/pizza.jpg":
+/*!**************************!*\
+  !*** ./images/pizza.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"8cf283b65c057615a29f.jpg\";\n\n//# sourceURL=webpack://restaurant/./images/pizza.jpg?");
+
+/***/ }),
+
+/***/ "./images/shrimp.jpg":
+/*!***************************!*\
+  !*** ./images/shrimp.jpg ***!
+  \***************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"8ab2a0bc13abb43a4ca8.jpg\";\n\n//# sourceURL=webpack://restaurant/./images/shrimp.jpg?");
 
 /***/ })
 
@@ -201,6 +251,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -215,6 +277,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
