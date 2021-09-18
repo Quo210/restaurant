@@ -40,6 +40,7 @@ const tabHandler = (() => {
             changeTab();
             contactModule.make();
         }
+        BTN3.click();
     }
     
     function changeTab() {
@@ -52,7 +53,6 @@ const tabHandler = (() => {
     }
 
     return {
-        test: test,
         handle: addListeners,
     }
 })();

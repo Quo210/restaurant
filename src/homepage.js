@@ -15,7 +15,7 @@ const homeModule = ( () => {
 
         //Add Content
         mainDiv.classList.add('main');
-        h1.textContent = 'Mine Ristoranti';
+        h1.textContent = 'Pizza Restaurant';
         h2.textContent = 'Webpack powered restaurant'
         let lorem = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab necessitatibus voluptatem praesentium reiciendis expedita fugiat facilis autem incidunt, distinctio veniam officiis maiores esse omnis itaque eius modi repudiandae dolores.'
         description.textContent = lorem;
